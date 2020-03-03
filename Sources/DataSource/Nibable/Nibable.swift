@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol Nibable {
+public protocol Nibable {
     static var nib: UINib { get }
 }
 
-extension Nibable where Self: UIView {
+public extension Nibable where Self: UIView {
     static var nib: UINib {
         UINib(nibName: Self.nibName, bundle: nil)
     }

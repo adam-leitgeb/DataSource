@@ -1,6 +1,5 @@
 import Foundation
 
-// TODO: - Hashable (so we can do animated changes).
 public struct Section {
 
     // MARK: - Properties

@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol CellModelSelectable {
+public protocol CellModelSelectable {
     var selectionHandler: (() -> Void)? { get }
     var deselectAutomatically: Bool { get }
 }
 
-extension CellModelSelectable {
+public extension CellModelSelectable {
     var deselectAutomatically: Bool {
         true
     }

@@ -9,5 +9,5 @@
 import UIKit
 
 extension UIView {
-    static let nibName: String = String(describing: self)
+    public static let nibName: String = String(describing: self)
 }
