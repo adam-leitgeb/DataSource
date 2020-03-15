@@ -27,7 +27,7 @@ open class DataSource: NSObject {
 
     // MARK: - Scroll view delegate
 
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
 
