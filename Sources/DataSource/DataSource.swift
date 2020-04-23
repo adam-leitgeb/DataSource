@@ -6,7 +6,7 @@ open class DataSource: NSObject {
 
     public var sections: [Section] = [] {
         didSet {
-            canCallScrollToBottom = true
+            sectionsDidUpdate(sections)
         }
     }
 
@@ -25,8 +25,16 @@ open class DataSource: NSObject {
         self.sections = sections
     }
 
-    // MARK: - Scroll view delegate
+    // MARK: - Utilities
 
+    open func sectionsDidUpdate(_ sections: [Section]) {
+        canCallScrollToBottom = true
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension DataSource {
     open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
