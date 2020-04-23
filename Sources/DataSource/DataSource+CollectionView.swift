@@ -36,7 +36,7 @@ extension DataSource: UICollectionViewDataSource {
         sections[section].cells.count
     }
 
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellModel = sections[indexPath.section].cells[indexPath.row]
         registerCellIfNeeded(with: cellModel, in: collectionView)
 
@@ -61,7 +61,7 @@ extension DataSource: UICollectionViewDataSource {
         registeredCellModelIdentifiers.insert(cellModel.reuseIdentifier)
     }
 
-    private func registerHeaderFooterIfNeeded(_ headerFooterModel: HeaderFooterViewModel, of kind: String, in collectionView: UICollectionView) {
+    public func registerHeaderFooterIfNeeded(_ headerFooterModel: HeaderFooterViewModel, of kind: String, in collectionView: UICollectionView) {
         guard !registeredCellModelIdentifiers.contains(headerFooterModel.reuseIdentifier) else {
             return
         }

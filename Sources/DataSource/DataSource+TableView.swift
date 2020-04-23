@@ -54,7 +54,7 @@ extension DataSource: UITableViewDataSource {
         sections[section].cells.count
     }
 
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellModel = sections[indexPath.section].cells[indexPath.row]
         registerCellIfNeeded(with: cellModel, in: tableView)
 
@@ -66,7 +66,7 @@ extension DataSource: UITableViewDataSource {
 
     // MARK: - Utilities
 
-    func registerCellIfNeeded(with cellModel: CellModel, in tableView: UITableView) {
+    public func registerCellIfNeeded(with cellModel: CellModel, in tableView: UITableView) {
         guard !registeredCellModelIdentifiers.contains(cellModel.reuseIdentifier) else {
             return
         }
@@ -79,7 +79,7 @@ extension DataSource: UITableViewDataSource {
         registeredCellModelIdentifiers.insert(cellModel.reuseIdentifier)
     }
 
-    func registerHeaderFooterIfNeeded(with headerFooterModel: HeaderFooterViewModel, in tableView: UITableView) {
+    public func registerHeaderFooterIfNeeded(with headerFooterModel: HeaderFooterViewModel, in tableView: UITableView) {
         guard !registeredCellModelIdentifiers.contains(headerFooterModel.reuseIdentifier) else {
             return
         }
