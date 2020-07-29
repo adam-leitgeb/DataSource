@@ -117,7 +117,7 @@ extension DataSource: UITableViewDelegate {
 
     // MARK: - Cells
 
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cellSelectable = sections[indexPath.section].cells[indexPath.row] as? CellModelSelectable {
             cellSelectable.selectionHandler?()
 
