@@ -18,7 +18,7 @@ extension DataSource: UITableViewDataSource {
 
     // MARK: - Headers
 
-    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerModel = sections[section].header else {
             return nil
         }
@@ -32,7 +32,7 @@ extension DataSource: UITableViewDataSource {
 
     // MARK: - Footer
 
-    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard let footerModel = sections[section].footer else {
             return nil
         }
